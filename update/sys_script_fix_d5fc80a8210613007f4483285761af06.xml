@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <before>false</before>
+        <description>Example of how to model a business rule with a Fix Script</description>
+        <flush_cache>false</flush_cache>
+        <name>Model Business Rule</name>
+        <run_once>true</run_once>
+        <script><![CDATA[// Variable Setup (not to be actually used in the business rule)
+
+// i picked one of the incidents from the list view
+var current = new GlideRecord('incident');
+current.get('number', 'INC0000059'); 
+
+// I copied the core script from our Business Rule and made some additions
+
+// Business Rule code:
+
+var number = current.number;
+gs.addInfoMessage('---> Number: ' + number);
+gs.info('---> Number: {0}', [number]);]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-05-09 22:45:01</sys_created_on>
+        <sys_id>d5fc80a8210613007f4483285761af06</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Model Business Rule</sys_name>
+        <sys_package display_value="CCW0673App" source="x_snc_ccw0673app">1cdcbb50210613007f4483285761afa6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CCW0673App">1cdcbb50210613007f4483285761afa6</sys_scope>
+        <sys_update_name>sys_script_fix_d5fc80a8210613007f4483285761af06</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-05-09 22:45:01</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>
